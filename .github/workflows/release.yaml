@@ -15,10 +15,11 @@ jobs:
         with:
           ref: "${{ github.ref_name }}"
       - name: Get Version
-        run: echo "SDK_VERSION=$(echo ${{ github.ref_name }} | cut -d'/' -f 2)" >> $GITHUB_ENV
+        id: get_version
+        run: echo "version=$(echo ${{ github.ref_name }} | cut -d'/' -f 2)" >> $$GITHUB_OUTPUT
       - name: Create Archive
-        run: tar -czvf foo_$SDK_VERSION.tar.gz foo
+        run: tar -czvf foo_${{ steps.get_version.outputs.version }}.tar.gz foo
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: foo_$SDK_VERSION.tar.gz
+          files: foo_${{ steps.get_version.outputs.version }}.tar.gz
