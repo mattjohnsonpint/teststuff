@@ -16,7 +16,7 @@ jobs:
           ref: "${{ github.ref_name }}"
       - name: Get Version
         id: get_version
-        run: echo "version=$(echo ${{ github.ref_name }} | cut -d'/' -f 2)" >> $$GITHUB_OUTPUT
+        run: echo "version=$(echo '${{ github.ref_name }}' | cut -d'/' -f 2)\n" >> $$GITHUB_OUTPUT
       - name: Create Archive
         run: tar -czvf foo_${{ steps.get_version.outputs.version }}.tar.gz foo
       - name: Release
