@@ -4,7 +4,8 @@ on:
   push:
     tags:
       - "foo/v*"
-
+permissions:
+  contents: "write"
 jobs:
   build:
     runs-on: ubuntu-latest
