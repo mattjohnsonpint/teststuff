@@ -12,9 +12,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: "${{ github.ref_name }}"
+      - name: Get Version
+        run: echo "SDK_VERSION=$(echo ${{ github.ref_name }} | cut -d'/' -f 2)" >> $GITHUB_ENV
       - name: Create Archive
-        run: tar -czvf foo.tar.gz foo
+        run: tar -czvf foo_$SDK_VERSION.tar.gz foo
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: foo.tar.gz
+          files: foo_$SDK_VERSION.tar.gz
