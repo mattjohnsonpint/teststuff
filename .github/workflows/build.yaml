@@ -1,5 +1,4 @@
-name: "Release Stuff"
-
+name: "Build"
 on:
   push:
     branches:
