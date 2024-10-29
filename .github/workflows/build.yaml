@@ -16,11 +16,11 @@ jobs:
         with:
           node-version: "22"
       - name: Install Dependencies
-        working-directory: ./mjptest
+        working-directory: ./mynewcli
         run: npm install
       - name: Test
-        working-directory: ./mjptest
-        run: npx foo
+        working-directory: ./mynewcli
+        run: node ./bin/run.js
         # run: npx --yes @hypermode/modus-cli@0.13.2-alpha.1 --version
         
 
