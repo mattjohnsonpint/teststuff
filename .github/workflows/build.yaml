@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Test StdOut
         run: echo "Hello, World!"
-      - name; Test StdErr
+      - name: Test StdErr
         run: echo "Hello, World!" >&2
       # - name: Checkout
       #   uses: actions/checkout@v4
