@@ -20,7 +20,7 @@ jobs:
         run: npm install
       - name: Build Modus App
         working-directory: ./src
-        run: modus build
+        run: npx --yes @hypermode/modus-cli build
         
 
           
