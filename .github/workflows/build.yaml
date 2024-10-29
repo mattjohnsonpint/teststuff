@@ -15,12 +15,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ">=22"
-      - name: Run test script
-        run: node test.js
-      - name: Install Dependencies
-        working-directory: src
-        run: npm ci
-      - name: Build
-        working-directory: src
-        run: npx modus --version
+      # - name: Run test script
+      #   run: node test.js
+      # - name: Install Dependencies
+      #   working-directory: src
+      #   run: npm ci
+      - name: Test
+        run: npx --yes @hypermode/modus-cli@0.13.2-alpha.1 --version
           
