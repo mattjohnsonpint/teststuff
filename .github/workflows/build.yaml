@@ -17,10 +17,10 @@ jobs:
           node-version: ">=22"
       - name: Run test script
         run: node test.js
-      # - name: Install Dependencies
-      #   working-directory: src
-      #   run: npm ci
-      # - name: Build
-      #   working-directory: src
-      #   run: npm run build
+      - name: Install Dependencies
+        working-directory: src
+        run: npm ci
+      - name: Build
+        working-directory: src
+        run: npx modus
           
