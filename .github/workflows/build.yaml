@@ -22,5 +22,5 @@ jobs:
         run: npm ci
       - name: Build
         working-directory: src
-        run: npx modus
+        run: npx modus --version
           
