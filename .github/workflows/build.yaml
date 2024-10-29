@@ -9,16 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Test StdOut
-        run: echo "Hello, World!"
-      - name: Test StdErr
-        run: echo "Hello, World!" >&2
-      # - name: Checkout
-      #   uses: actions/checkout@v4
-      # - name: Setup Node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version: ">=22"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ">=22"
+      - name: Run test script
+        run: node test.js
       # - name: Install Dependencies
       #   working-directory: src
       #   run: npm ci
