@@ -14,15 +14,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      # - name: Run test script
-      #   run: node test.js
-      # - name: Install Dependencies
-      #   working-directory: src
-      #   run: npm ci
+          node-version: "22"
+      - name: Install Dependencies
+        working-directory: ./mjptest
+        run: npm install
       - name: Test
-        run: npx --yes @hypermode/modus-cli@0.13.2-alpha.1 --version
-        env:
-          ACTIONS_STEP_DEBUG: true
+        working-directory: ./mjptest
+        run: npx foo
+        # run: npx --yes @hypermode/modus-cli@0.13.2-alpha.1 --version
+        
 
           

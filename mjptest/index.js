@@ -1,5 +1,7 @@
-const isatty = require('tty').isatty;
-const process = require('process');
+#!/usr/bin/env node
+
+import { isatty } from "node:tty";
+import process from "node:process";
 
 console.log("stdin", isatty(process.stdin.fd));
 console.log("stdout", isatty(process.stdout.fd));
