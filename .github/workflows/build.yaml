@@ -36,9 +36,9 @@ jobs:
           cache-dependency-path: "./goapp1/go.sum"
           go-version-file: "./goapp1/go.mod"
       - name: Setup TinyGo
-          uses: acifani/setup-tinygo@v2
-          with:
-            tinygo-version: "0.34.0"
+        uses: acifani/setup-tinygo@v2
+        with:
+          tinygo-version: "0.34.0"
       - name: Build Modus App
         working-directory: ./goapp1
         run: npx -y -p @hypermode/modus-cli modus build
