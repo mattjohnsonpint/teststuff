@@ -31,6 +31,8 @@ jobs:
         uses: actions/setup-go@v5
       - name: Setup TinyGo
         uses: acifani/setup-tinygo@v2
+        with:
+          tinygo-version: "0.34.0"
       - name: Build Modus App
         working-directory: ./goapp1
         run: npx -y -p @hypermode/modus-cli modus build
