@@ -6,7 +6,7 @@ on:
 permissions:
   contents: "write"
 jobs:
-  build:
+  build-as:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,11 +16,28 @@ jobs:
         with:
           node-version: "22"
       - name: Install Dependencies
-        working-directory: ./src
+        working-directory: ./asapp1
         run: npm install
       - name: Build Modus App
-        working-directory: ./src
-        run: npx --yes @hypermode/modus-cli@0.13.2-alpha.2 build
+        working-directory: ./asapp1
+        run: npx -y -p @hypermode/modus-cli modus build
+  build-go:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          cache-dependency-path: "./goapp1/go.sum"
+          go-version-file: "./goapp1/go.mod"
+      - name: Build Modus App
+        working-directory: ./goapp1
+        run: npx -y -p @hypermode/modus-cli modus build
         
 
           

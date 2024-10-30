@@ -1,9 +1,9 @@
 {
-  "name": "modus-as-app",
+  "name": "asapp1",
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "modus build",
+    "build": "modus-as-build",
     "lint": "eslint .",
     "pretty": "prettier --write .",
     "pretty:check": "prettier --check ."
