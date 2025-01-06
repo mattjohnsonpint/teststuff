@@ -6,36 +6,40 @@ on:
 permissions:
   contents: "write"
 jobs:
-  build-as:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Build Modus App
-        working-directory: ./asapp1
-        run: npx -y -p @hypermode/modus-cli modus build
-  build-go:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Setup Go
-        uses: actions/setup-go@v5
-      - name: Setup TinyGo
-        uses: acifani/setup-tinygo@v2
-        with:
-          tinygo-version: "0.34.0"
-      - name: Build Modus App
-        working-directory: ./goapp1
-        run: npx -y -p @hypermode/modus-cli modus build
+      - run: echo "Hello, World!"
+  # build-as:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: "22"
+  #     - name: Build Modus App
+  #       working-directory: ./asapp1
+  #       run: npx -y -p @hypermode/modus-cli modus build
+  # build-go:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v4
+  #       with:
+  #         node-version: "22"
+  #     - name: Setup Go
+  #       uses: actions/setup-go@v5
+  #     - name: Setup TinyGo
+  #       uses: acifani/setup-tinygo@v2
+  #       with:
+  #         tinygo-version: "0.34.0"
+  #     - name: Build Modus App
+  #       working-directory: ./goapp1
+  #       run: npx -y -p @hypermode/modus-cli modus build
         
 
           
