@@ -9,9 +9,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: >
-          echo "Hello, 
-          World!"
+      - run: go version
+      - run: go version
+        env:
+          GOTOOLCHAIN: local
+      - name: Setup Go
+        uses: actions/setup-go@v5
+      - run: go version
+      - run: go version
+        env:
+          GOTOOLCHAIN: local
+
   # build-as:
   #   runs-on: ubuntu-latest
   #   steps:
