@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "*.go"
 permissions:
   contents: "write"
 jobs:
