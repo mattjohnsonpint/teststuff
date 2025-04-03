@@ -4,6 +4,7 @@ on:
     branches:
       - "main"
     paths:
+      - ${{ github.action_path}}
       - "*.go"
 permissions:
   contents: "write"
